@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 import { ValidRoles } from 'src/auth/enums/valid-roles.enum';
 import { Repository } from 'typeorm';
 import { SignupInput } from '../auth/dto/inputs/signup.input';
