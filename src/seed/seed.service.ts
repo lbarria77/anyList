@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { ItemsService } from 'src/items/items.service';
@@ -31,13 +31,13 @@ export class SeedService {
     private readonly listService: ListsService,
     private readonly listItemService: ListItemService,
   ) {
-    this.isProd = configService.get('STATE') === 'prod';
+    // this.isProd = configService.get('STATE') === 'prod';
   }
 
   async executeSeed(): Promise<boolean> {
-    if (this.isProd) {
-      throw new UnauthorizedException('We can run SEED on Prod');
-    }
+    // if (this.isProd) {
+    //   throw new UnauthorizedException('We can run SEED on Prod');
+    // }
     // Limpiar la base de datos - Borrar todo
     await this.deleteDatabase();
 
