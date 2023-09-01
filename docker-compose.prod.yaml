@@ -5,7 +5,7 @@ services:
   #   image: postgres:15.4
   #   restart: always
   #   ports:
-  #     - '${DB_PORT}:${DB_PORT}'
+  #     - '5432:5432'
   #   environment:
   #     POSTGRES_PASSWORD: ${DB_PASSWORD}
   #     POSTGRES_DB: ${DB_NAME}
@@ -19,8 +19,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # image: nest-graphql
-    image: lbarria77/nest-graphql-prod:1.0.0
+    image: lbarria77/nest-graphql-with-db
+    # image: lbarria77/nest-graphql-prod:1.0.0
     container_name: AnylistApp
     restart: always # reiniciar el contenedor si se detiene
     ports:
